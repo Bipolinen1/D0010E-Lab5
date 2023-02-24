@@ -33,6 +33,7 @@ public class BinOpButton extends CalculatorButton{  // Ärver CalculatorButton
                 break;
             // Nollställer display
             case Input2:
+                this.setBorder(Color.red);
                 situation.getDisplay().setText("0");
                 situation.updateState(State.Input2);
                 break;

@@ -3,6 +3,8 @@ package Buttons;
 import Modell.Situation;
 import Modell.State;
 
+import java.awt.*;
+
 public class DigitButton extends CalculatorButton{ // DigitButton ärver CalculatorButton
     @Override
     public void transition() {  // Implementerar den abstrakta medtoden transition
@@ -19,6 +21,7 @@ public class DigitButton extends CalculatorButton{ // DigitButton ärver Calcula
                 break;
             // Uppdaterar display och lägger till siffror
             case Input2:
+                situation.getBinOpButton().setBorder(Color.gray);
                 if(situation.getDisplay().getText() == "0"){
                     situation.getDisplay().setText(this.toString());
                 }
@@ -29,6 +32,7 @@ public class DigitButton extends CalculatorButton{ // DigitButton ärver Calcula
             // Byter tillstånd och sätter display till intryckt knapp
             case OpReady:
                 situation.getDisplay().setText(this.toString());
+                situation.getBinOpButton().setBorder(Color.gray);
                 situation.updateState(State.Input2);
                 break;
             // Sätter display till värdet på intryckt knapp och byter tillstånd
