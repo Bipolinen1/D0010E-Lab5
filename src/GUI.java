@@ -9,8 +9,6 @@ public class GUI extends JFrame { // Klassen GUI ärver JFrame
     private JLabel display;
     private JPanel keyPad;
 
-
-
     public GUI(){ //
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Avslutar programmet
 
@@ -29,30 +27,37 @@ public class GUI extends JFrame { // Klassen GUI ärver JFrame
         // Skapar en instans av siuation som använder display
         Situation situation = new Situation(display);
 
-
+        // Skapar constraints för display
         GridBagConstraints constraintsDisplay = new GridBagConstraints();
         constraintsDisplay.fill = GridBagConstraints.BOTH;
         constraintsDisplay.weighty = 1;
         constraintsDisplay.weightx = 1;
+        // grix och gridy sätter postionen för displayen
         constraintsDisplay.gridx = 0;
         constraintsDisplay.gridy = 0;
+        // gridwidth och gridheight bestämmer storleken för displayen
         constraintsDisplay.gridwidth = 1;
         constraintsDisplay.gridheight = 1;
         canvas.add(display, constraintsDisplay);
 
 
-
+        // Skapar keypad som en JPanel
         keyPad = new JPanel();
+
+        // Sätter layout och constraints för keypad
         keyPad.setLayout(new GridLayout(4, 4));
         GridBagConstraints constraintsKeyPad = new GridBagConstraints();
         constraintsKeyPad.fill = GridBagConstraints.BOTH;
         constraintsKeyPad.weighty = 1;
         constraintsKeyPad.weightx = 1;
+        // grix och gridy sätter postionen för keypad
         constraintsKeyPad.gridx = 0;
         constraintsKeyPad.gridy = 4;
+        // gridwidth och gridheight bestämmer storleken för keypad
         constraintsKeyPad.gridwidth = 1;
         constraintsKeyPad.gridheight = 4;
 
+        // Lägger till keypad på canvas
         canvas.add(keyPad, constraintsKeyPad);
 
         // Lägger till alla knappar
