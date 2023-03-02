@@ -28,7 +28,6 @@ public class BinOpButton extends CalculatorButton{  // Ärver CalculatorButton
                 // Sparar knappen som tryckts ner, denna operator används senare
                 situation.setBinaryOperator(this);
                 // Uppdaterar display ochh tillstånd
-                situation.getDisplay().setText("0");
                 situation.updateState(State.OpReady);
                 break;
             // Nollställer display
