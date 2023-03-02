@@ -12,6 +12,7 @@ public class EqualsButton extends CalculatorButton{  // Ärver CalculatorButton
         switch(situation.getState()){
             // Inget händer
             case Input1:
+                situation.getBinOpButton().setBorder(Color.gray);
                 situation.updateState(State.Input1);
                 break;
             // Nollställer färg på knappen, sätter displayen till resultatet och uppdaterar tillståndet

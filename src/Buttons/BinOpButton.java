@@ -50,6 +50,7 @@ public class BinOpButton extends CalculatorButton{  // Ärver CalculatorButton
                 // Sätter leftOperand till värdet i displayen
                 situation.getBinOpButton().setBorder(Color.GRAY);
                 situation.setLeftOperand(Integer.parseInt(situation.getDisplay().getText()));
+                situation.setBinaryOperator(this);
                 // Färgar operatorknappen röd
                 this.setBorder(Color.RED);
                 situation.updateState(State.OpReady);

@@ -32,7 +32,6 @@ public class DigitButton extends CalculatorButton{ // DigitButton ärver Calcula
             // Byter tillstånd och sätter display till intryckt knapp
             case OpReady:
                 situation.getDisplay().setText(this.toString());
-                situation.getBinOpButton().setBorder(Color.gray);
                 situation.updateState(State.Input2);
                 break;
             // Sätter display till värdet på intryckt knapp och byter tillstånd
