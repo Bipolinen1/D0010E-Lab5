@@ -8,7 +8,7 @@ import java.awt.*;
 public class EqualsButton extends CalculatorButton{  // Ärver CalculatorButton
     // Implementerar den abstrakta metoden transition, består av ett switch case
     @Override
-    public void transition() {
+    public void transition() throws ArithmeticException{
         switch(situation.getState()){
             // Inget händer
             case Input1:
@@ -18,8 +18,13 @@ public class EqualsButton extends CalculatorButton{  // Ärver CalculatorButton
             // Nollställer färg på knappen, sätter displayen till resultatet och uppdaterar tillståndet
             case Input2:
                 situation.getBinOpButton().setBorder(Color.GRAY);
-                situation.getDisplay().setText(Integer.toString(situation.getBinOpButton().result(situation.getLeftOperand(),
-                        Integer.parseInt(situation.getDisplay().getText()))));
+                try{
+                    situation.getDisplay().setText(Integer.toString(situation.getBinOpButton().result(situation.getLeftOperand(),
+                            Integer.parseInt(situation.getDisplay().getText()))));
+                }
+                catch(ArithmeticException e){
+                    situation.getDisplay().setText("Error");
+                }
                 situation.updateState(State.HasResult);
                 break;
             // Inget händer

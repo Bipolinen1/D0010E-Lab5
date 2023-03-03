@@ -21,7 +21,6 @@ public class DigitButton extends CalculatorButton{ // DigitButton ärver Calcula
                 break;
             // Uppdaterar display och lägger till siffror
             case Input2:
-                situation.getBinOpButton().setBorder(Color.gray);
                 if(situation.getDisplay().getText() == "0"){
                     situation.getDisplay().setText(this.toString());
                 }
